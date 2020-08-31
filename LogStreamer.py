@@ -27,7 +27,7 @@ def stream_logs(destData, sourceFile, curr_line_file):
         logs_to_generate = random.randrange(MIN_VALUE, MAX_VALUE)
         log_gen.GenerateLog(logs_to_generate)
         time.sleep(SECONDS_BETWEEN_LOGS)
-        
+
     
 if __name__ == '__main__':
     if len(argv) != 3:
@@ -37,6 +37,8 @@ if __name__ == '__main__':
     else:
         tableName = argv[1]
         sourceFile = argv[2]
-        destData = f"{baseDestData}/{tableName}"  # It's important to separate different data logs
-        curr_line_file = f"{tableName}_LastLine.txt" # And also its files where they store current last line
+        # It's important to separate different data logs
+        destData = time.strftime(f"{baseDestData}/{tableName}/%Y%m%d-%H%M%S.log") 
+        # And also its files where they store current last line
+        curr_line_file = f"{tableName}_LastLine.txt" 
         stream_logs(destData, sourceFile, curr_line_file)

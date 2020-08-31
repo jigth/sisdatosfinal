@@ -17,7 +17,7 @@ import sys
 
 # sourceData = "OnlineRetail.csv"
 # placeholder = "LastLine.txt"
-destData = time.strftime("/var/log/trainsdata/%Y%m%d-%H%M%S.log")
+# destData = time.strftime("/var/log/trainsdata/%Y%m%d-%H%M%S.log")
 
 class LogGenerator():
     def __init__(self, destData, sourceData, placeholder):
