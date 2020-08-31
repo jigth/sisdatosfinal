@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Ignore internal script files
+*LastLine.txt
+
 # C extensions
 *.so
 

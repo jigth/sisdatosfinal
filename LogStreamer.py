@@ -38,7 +38,7 @@ if __name__ == '__main__':
         tableName = argv[1]
         sourceFile = argv[2]
         # It's important to separate different data logs
-        destData = time.strftime(f"{baseDestData}/{tableName}/%Y%m%d-%H%M%S.log") 
+        destData = f"{baseDestData}/{tableName}"
         # And also its files where they store current last line
         curr_line_file = f"{tableName}_LastLine.txt" 
         stream_logs(destData, sourceFile, curr_line_file)
